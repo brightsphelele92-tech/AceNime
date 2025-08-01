@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Anime Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #ffffff;
+    }
+    header, section {
+      padding: 20px;
+    }
+    .nav-bar {
+      background-color: #111;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-bar a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+    }
+    .hero img {
+      width: 120px;
+      margin-right: 20px;
+    }
+    .hero-text button {
+      background-color: #f0542c;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .section-title {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+    }
+    .card {
+      background-color: #1a1a1a;
+      padding: 10px;
+      border-radius: 10px;
+      min-width: 160px;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .stars {
+      color: gold;
+    }
+    .shop-grid img {
+      width: 100px;
+      border-radius: 10px;
+    }
+    .auth-section input, .auth-section button {
+      padding: 10px;
+      margin: 5px;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .review-form input, .review-form textarea, .review-form button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-mode" onclick="toggleMode()">Toggle Mode</div>  <div class="nav-bar">
+    <div><strong>AnimeHub</strong></div>
+    <div>
+      <a href="#reviews">Reviews</a>
+      <a href="#manga">Manga</a>
+      <a href="#community">Community</a>
+      <a href="#shop">Shop</a>
+      <a href="#account">Account</a>
+    </div>
+  </div>  <section class="hero">
+    <img src="https://via.placeholder.com/120" alt="Ichigo">
+    <div class="hero-text">
+      <h1>ANIME REVIEWS</h1>
+      <p>Track, rate, and explore anime like never before.</p>
+      <button onclick="fetchAnime()">Start Watching</button>
+    </div>
+  </section>  <section id="reviews">
+    <h2 class="section-title">Latest Reviews</h2>
+    <div class="grid" id="animeGrid"></div>
+  </section>  <section id="manga">
+    <h2 class="section-title">Popular Manga</h2>
+    <div class="grid">
+      <div class="card"><img src="https://via.placeholder.com/100"><p>One Piece</p></div>
+      <div class="card"><img src="https://via.placeholder.com/100"><p>Berserk</p></div>
+      <div class="card"><img src="https://via.placeholder.com/100"><p>Naruto</p></div>
+    </div>
+  </section>  <section id="community">
+    <h2 class="section-title">Community</h2>
+    <p>Join forums, post art, or share fan fiction!</p>
+    <button>Join Discord</button>
+  </section>  <section id="news">
+    <h2 class="section-title">Anime News</h2>
+    <p>New season of Jujutsu Kaisen confirmed! <em>(Aug 2025)</em></p>
+    <p>Studio MAPPA announces original anime series!</p>
+  </section>  <section id="shop">
+    <h2 class="section-title">Shop Anime Clothing</h2>
+    <div class="shop-grid">
+      <img src="https://via.placeholder.com/100" alt="Shirt1" />
+      <img src="https://via.placeholder.com/100" alt="Shirt2" />
+    </div>
+  </section>  <section id="account" class="auth-section">
+    <h2 class="section-title">Account</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="signup()">Sign Up</button>
+    <button onclick="login()">Login</button>
+    <p>Track episodes, save favorites, rate shows!</p>
+  </section>  <section class="review-form">
+    <h2 class="section-title">Leave a Review</h2>
+    <input id="animeTitle" placeholder="Anime Title" />
+    <textarea id="animeReview" placeholder="Your Review"></textarea>
+    <input id="animeStars" placeholder="Stars (1-5)" type="number" />
+    <button onclick="submitReview()">Submit Review</button>
+  </section>  <script>
+    const api = 'http://localhost:5000'; // Replace with deployed URL if needed
+
+    function toggleMode() {
+      const body = document.body;
+      body.style.backgroundColor = body.style.backgroundColor === 'white' ? '#0e0e0e' : 'white';
+      body.style.color = body.style.color === 'black' ? 'white' : 'black';
+    }
+
+    async function signup() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      await fetch(`${api}/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+      alert('Signup successful');
+    }
+
+    async function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const res = await fetch(`${api}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
+      localStorage.setItem('token', data.token);
+      alert('Logged in!');
+    }
+
+    async function fetchAnime() {
+      const res = await fetch(`${api}/anime`);
+      const animes = await res.json();
+      const grid = document.getElementById('animeGrid');
+      grid.innerHTML = '';
+      animes.forEach(anime => {
+        grid.innerHTML += `
+          <div class="card">
+            <img src="https://via.placeholder.com/150" />
+            <p>${anime.title}</p>
+            <div class="stars">${'★'.repeat(anime.rating || 4)}</div>
+            <p>${anime.synopsis}</p>
+          </div>
+        `;
+      });
+    }
+
+    async function submitReview() {
+      const title = document.getElementById('animeTitle').value;
+      const comment = document.getElementById('animeReview').value;
+      const stars = parseInt(document.getElementById('animeStars').value);
+      const token = localStorage.getItem('token');
+      await fetch(`${api}/anime/review`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ title, comment, stars })
+      });
+      alert('Review submitted!');
+    }
+  </script></body>
+</html>
