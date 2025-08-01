@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anime Reviews</title>
+  <title>Anime Reviews & Store</title>
   <style>
     * {
       margin: 0;
@@ -42,7 +43,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .section-title {
+    .section-title, h2 {
       font-size: 1.8em;
       margin: 40px 0 20px;
     }
@@ -114,6 +115,23 @@
     .news-item h4 {
       margin-bottom: 5px;
     }
+
+    /* New scrollable sections styling */
+    .scroll-section {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    .scroll-section .card {
+      min-width: 180px;
+      width: 180px; /* keep consistent card size */
+    }
+    .price {
+      color: #f25c3c;
+      margin-top: 5px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -126,118 +144,260 @@
         <p>Read the latest reviews of your favorite anime series.</p>
         <button>Read Now</button>
       </div>
-    </div><!-- Latest Reviews -->
-<h2 class="section-title">Latest Reviews</h2>
-<div class="filter-buttons">
-  <button>All</button>
-  <button>Action</button>
-  <button>Adventure</button>
-  <button>Fantasy</button>
-</div>
-<div class="card-grid">
-  <div class="card">
-    <img src="https://i.imgur.com/8W4HwSk.jpg" alt="My Hero Academia" />
-    <h4>My Hero Academia</h4>
-    <div class="star">★★★★★</div>
-    <p>Review</p>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/nclTjR1.jpg" alt="Demon Slayer" />
-    <h4>Demon Slayer</h4>
-    <div class="star">★★★★☆</div>
-    <p>Review</p>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/LZs1uVb.jpg" alt="Attack on Titan" />
-    <h4>Attack on Titan</h4>
-    <div class="star">★★★★☆</div>
-    <p>Review</p>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/92VMIj1.jpg" alt="One Piece" />
-    <h4>One Piece</h4>
-    <div class="star">★★★★☆</div>
-    <p>Review</p>
-  </div>
-</div>
+    </div>
 
-<!-- Popular Manga -->
-<h2 class="section-title">Popular Manga</h2>
-<div class="card-grid">
-  <div class="card">
-    <img src="https://i.imgur.com/IgrzxYi.jpg" alt="One Piece Manga" />
-    <h4>One Piece</h4>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/r0j7sma.jpg" alt="Jujutsu Kaisen" />
-    <h4>Jujutsu Kaisen</h4>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/UWkJh4H.jpg" alt="Berserk" />
-    <h4>Berserk</h4>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/Z0Aevcx.jpg" alt="Naruto" />
-    <h4>Naruto</h4>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/zGDak3X.jpg" alt="Dragon Ball" />
-    <h4>Dragon Ball</h4>
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/9Y6E3Bq.jpg" alt="Death Note" />
-    <h4>Death Note</h4>
-  </div>
-</div>
+    <!-- Latest Reviews -->
+    <h2 class="section-title">Latest Reviews</h2>
+    <div class="filter-buttons">
+      <button>All</button>
+      <button>Action</button>
+      <button>Adventure</button>
+      <button>Fantasy</button>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://i.imgur.com/8W4HwSk.jpg" alt="My Hero Academia" />
+        <h4>My Hero Academia</h4>
+        <div class="star">★★★★★</div>
+        <p>Review</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/nclTjR1.jpg" alt="Demon Slayer" />
+        <h4>Demon Slayer</h4>
+        <div class="star">★★★★☆</div>
+        <p>Review</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/LZs1uVb.jpg" alt="Attack on Titan" />
+        <h4>Attack on Titan</h4>
+        <div class="star">★★★★☆</div>
+        <p>Review</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/92VMIj1.jpg" alt="One Piece" />
+        <h4>One Piece</h4>
+        <div class="star">★★★★☆</div>
+        <p>Review</p>
+      </div>
+    </div>
 
-<!-- Shop Section -->
-<h2 class="section-title">Shop Anime Clothing</h2>
-<div class="card-grid shop-section">
-  <div class="card">
-    <img src="https://i.imgur.com/kDTlfw9.jpg" alt="Anime Hoodie" />
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/qU1dDNC.jpg" alt="Anime Shirt" />
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/WZAzUqN.jpg" alt="Anime Pants" />
-  </div>
-  <div class="card">
-    <img src="https://i.imgur.com/zERe6RY.jpg" alt="Tie-Dye Anime Shirt" />
-  </div>
-</div>
+    <!-- Popular Manga -->
+    <h2 class="section-title">Popular Manga</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://i.imgur.com/IgrzxYi.jpg" alt="One Piece Manga" />
+        <h4>One Piece</h4>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/r0j7sma.jpg" alt="Jujutsu Kaisen" />
+        <h4>Jujutsu Kaisen</h4>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/UWkJh4H.jpg" alt="Berserk" />
+        <h4>Berserk</h4>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/Z0Aevcx.jpg" alt="Naruto" />
+        <h4>Naruto</h4>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/zGDak3X.jpg" alt="Dragon Ball" />
+        <h4>Dragon Ball</h4>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/9Y6E3Bq.jpg" alt="Death Note" />
+        <h4>Death Note</h4>
+      </div>
+    </div>
 
-<!-- Review Submission Form -->
-<div class="form-section">
-  <h2 class="section-title">Submit Your Review</h2>
-  <form>
-    <input type="text" placeholder="Anime Title" required>
-    <textarea rows="4" placeholder="Your review..." required></textarea>
-    <button type="submit">Submit Review</button>
-  </form>
-</div>
+    <!-- New Scrollable Popular Manga Covers -->
+    <h2>Popular Manga Covers (Scrollable)</h2>
+    <div class="scroll-section">
+      <div class="card"><img src="https://i.imgur.com/IgrzxYi.jpg" alt="One Piece" /><h4>One Piece</h4></div>
+      <div class="card"><img src="https://i.imgur.com/r0j7sma.jpg" alt="Jujutsu Kaisen" /><h4>Jujutsu Kaisen</h4></div>
+      <div class="card"><img src="https://i.imgur.com/UWkJh4H.jpg" alt="Berserk" /><h4>Berserk</h4></div>
+      <div class="card"><img src="https://i.imgur.com/Z0Aevcx.jpg" alt="Naruto" /><h4>Naruto</h4></div>
+      <div class="card"><img src="https://i.imgur.com/zGDak3X.jpg" alt="Dragon Ball" /><h4>Dragon Ball</h4></div>
+      <div class="card"><img src="https://i.imgur.com/9Y6E3Bq.jpg" alt="Death Note" /><h4>Death Note</h4></div>
+      <div class="card"><img src="https://i.imgur.com/8W4HwSk.jpg" alt="My Hero Academia" /><h4>My Hero Academia</h4></div>
+      <div class="card"><img src="https://i.imgur.com/nclTjR1.jpg" alt="Demon Slayer" /><h4>Demon Slayer</h4></div>
+      <div class="card"><img src="https://i.imgur.com/LZs1uVb.jpg" alt="Attack on Titan" /><h4>Attack on Titan</h4></div>
+      <div class="card"><img src="https://i.imgur.com/92VMIj1.jpg" alt="One Piece" /><h4>One Piece</h4></div>
+      <!-- Add more manga covers up to 20 if needed -->
+    </div>
 
-<!-- Community Section -->
-<div class="community-section">
-  <h2 class="section-title">Join Our Anime Community</h2>
-  <p>Chat with fans on Discord and share your favorite moments.</p>
-  <a href="https://discord.com" target="_blank">
-    <button>Join Discord</button>
-  </a>
-</div>
+    <!-- Anime Reviews Scrollable -->
+    <h2>Anime Reviews (Scrollable)</h2>
+    <div class="scroll-section">
+      <div class="card">
+        <img src="https://i.imgur.com/8W4HwSk.jpg" alt="My Hero Academia" />
+        <h4>My Hero Academia</h4>
+        <p>Incredible characters and intense fights!</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/LZs1uVb.jpg" alt="Attack on Titan" />
+        <h4>Attack on Titan</h4>
+        <p>A dark, thrilling story of survival.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/nclTjR1.jpg" alt="Demon Slayer" />
+        <h4>Demon Slayer</h4>
+        <p>Gorgeous animation and deep emotion.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/r0j7sma.jpg" alt="Jujutsu Kaisen" />
+        <h4>Jujutsu Kaisen</h4>
+        <p>Sorcerers vs. curses in stylish combat.</p>
+      </div>
+      <!-- Add 6 more anime review cards here with real images and short reviews -->
+      <div class="card">
+        <img src="https://i.imgur.com/Z0Aevcx.jpg" alt="Naruto" />
+        <h4>Naruto</h4>
+        <p>A classic story of friendship and ninja battles.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/qU1dDNC.jpg" alt="One Piece" />
+        <h4>One Piece</h4>
+        <p>An epic adventure on the seas with unforgettable characters.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/WZAzUqN.jpg" alt="Bleach" />
+        <h4>Bleach</h4>
+        <p>Action-packed battles in the world of spirits.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/92VMIj1.jpg" alt="One Piece" />
+        <h4>One Piece</h4>
+        <p>A timeless tale full of friendship and adventure.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/9Y6E3Bq.jpg" alt="Death Note" />
+        <h4>Death Note</h4>
+        <p>A psychological thriller with moral dilemmas.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/uQ9B3X1.jpg" alt="Gojo" />
+        <h4>Gojo</h4>
+        <p>One of the strongest and coolest sorcerers in anime.</p>
+      </div>
+    </div>
 
-<!-- Anime News Section -->
-<div class="news-section">
-  <h2 class="section-title">Latest Anime News</h2>
-  <div class="news-item">
-    <h4>One Piece Live Action Season 2 Announced!</h4>
-    <p>Netflix confirms a second season for One Piece's live adaptation.</p>
-  </div>
-  <div class="news-item">
-    <h4>Jujutsu Kaisen Season 3 Production Begins</h4>
-    <p>MAPPA begins production on season 3 with returning staff.</p>
-  </div>
-</div>
+    <!-- Shop Section -->
+    <h2 class="section-title">Shop Anime Clothing</h2>
+    <div class="scroll-section shop-section">
+      <!-- T-Shirts -->
+      <div class="card">
+        <img src="https://i.imgur.com/qU1dDNC.jpg" alt="Naruto T-Shirt" />
+        <h4>Naruto Tee</h4>
+        <div class="price">$120</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/WZAzUqN.jpg" alt="One Piece T-Shirt" />
+        <h4>One Piece Tee</h4>
+        <div class="price">$120</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/kDTlfw9.jpg" alt="Demon Slayer T-Shirt" />
+        <h4>Demon Slayer Tee</h4>
+        <div class="price">$120</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/zERe6RY.jpg" alt="Bleach T-Shirt" />
+        <h4>Bleach Tee</h4>
+        <div class="price">$120</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/Z0Aevcx.jpg" alt="JJK T-Shirt" />
+        <h4>Jujutsu Kaisen Tee</h4>
+        <div class="price">$120</div>
+      </div>
+
+      <!-- Pants -->
+      <div class="card">
+        <img src="https://i.imgur.com/nJ1uSkq.jpg" alt="Naruto Pants" />
+        <h4>Naruto Pants</h4>
+        <div class="price">$200</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/OQt9K5q.jpg" alt="Bleach Pants" />
+        <h4>Bleach Pants</h4>
+        <div class="price">$200</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/K6hr8kV.jpg" alt="Chainsaw Pants" />
+        <h4>Chainsaw Man Pants</h4>
+        <div class="price">$200</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/uQ9B3X1.jpg" alt="Gojo Pants" />
+        <h4>Gojo Pants</h4>
+        <div class="price">$200</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/qKxZTfJ.jpg" alt="Tokyo Ghoul Pants" />
+        <h4>Tokyo Ghoul Pants</h4>
+        <div class="price">$200</div>
+      </div>
+
+      <!-- Chains -->
+      <div class="card">
+        <img src="https://i.imgur.com/9Y6E3Bq.jpg" alt="Naruto Chain" />
+        <h4>Naruto Chain</h4>
+        <div class="price">$50</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/uxDJvFS.jpg" alt="Demon Slayer Chain" />
+        <h4>Demon Slayer Chain</h4>
+        <div class="price">$50</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/UWkJh4H.jpg" alt="JJK Chain" />
+        <h4>JJK Chain</h4>
+        <div class="price">$50</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/92VMIj1.jpg" alt="One Piece Chain" />
+        <h4>One Piece Chain</h4>
+        <div class="price">$50</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/IgrzxYi.jpg" alt="Bleach Chain" />
+        <h4>Bleach Chain</h4>
+        <div class="price">$50</div>
+      </div>
+    </div>
+
+    <!-- Review Submission Form -->
+    <div class="form-section">
+      <h2 class="section-title">Submit Your Review</h2>
+      <form>
+        <input type="text" placeholder="Anime Title" required>
+        <textarea rows="4" placeholder="Your review..." required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Community Section -->
+    <div class="community-section">
+      <h2 class="section-title">Join Our Anime Community</h2>
+      <p>Chat with fans on Discord and share your favorite moments.</p>
+      <a href="https://discord.com" target="_blank">
+        <button>Join Discord</button>
+      </a>
+    </div>
+
+    <!-- Anime News Section -->
+    <div class="news-section">
+      <h2 class="section-title">Latest Anime News</h2>
+      <div class="news-item">
+        <h4>One Piece Live Action Season 2 Announced!</h4>
+        <p>Netflix confirms a second season for One Piece's live adaptation.</p>
+      </div>
+      <div class="news-item">
+        <h4>Jujutsu Kaisen Season 3 Production Begins</h4>
+        <p>MAPPA begins production on season 3 with returning staff.</p>
+      </div>
+    </div>
 
   </div>
 </body>
