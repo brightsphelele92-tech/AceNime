@@ -1,162 +1,82 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AceNime</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-    header {
-      padding: 20px;
-      text-align: center;
-      background: linear-gradient(90deg, #ff4b2b, #ff416c);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    .nav {
-      display: flex;
-      justify-content: space-around;
-      background-color: #2a2a2a;
-      padding: 10px 0;
-    }
-    .nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .nav a.active {
-      border-bottom: 2px solid #00e5ff;
-    }
-    .search {
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-      background-color: #333;
-    }
-    .search input {
-      width: 80%;
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: none;
-    }
-    .section {
-      padding: 20px;
-    }
-    .section h2 {
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      color: #00e5ff;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 15px;
-    }
-    .card {
-      background-color: #2d2d2d;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      display: block;
-    }
-    .card h3 {
-      margin: 10px 5px;
-      font-size: 0.95rem;
-      color: #fff;
-    }
-    .card p {
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-      color: #aaa;
-    }
+    body { margin:0; background:#111;color:#eee; font-family:sans-serif; }
+    header { padding:20px; background:#222; text-align:center; }
+    .nav { display:flex;justify-content:space-around; background:#333; }
+    .nav a {padding:15px;color:#aaa;text-decoration:none;}
+    .nav a.active {color:#0ff;border-bottom:2px solid #0ff;}
+    .search {padding:10px;background:#222;text-align:center;}
+    .search input {width:80%;padding:10px;border:none;border-radius:4px;}
+    .section {padding:20px;}
+    .section h2 {color:#0ff;margin-bottom:10px;}
+    .grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
+    .card {background:#222; padding:10px; border-radius:6px; text-align:center;}
+    .card img {width:100%;height:140px;object-fit:cover;border-radius:4px;}
+    .card h3 {font-size:1rem; margin:8px 0 4px;}
+    .card p{font-size:.85rem; color:#bbb;}
+    button {padding:8px 12px; margin-top:6px; border:none;border-radius:4px;cursor:pointer;background:#0ff;color:#000;}
   </style>
 </head>
 <body>
-  <header>
-    <h1>AceNime</h1>
-  </header>
-  <div class="nav">
+  <header><h1>AceNime</h1></header>
+  <nav class="nav">
     <a href="#store">Anime Store</a>
     <a href="#fights">Anime Fights</a>
     <a href="#reviews" class="active">Anime Reviews</a>
     <a href="#manga">Manga</a>
-  </div>
-  <div class="search">
-    <input type="text" placeholder="Search anime, manga, fights, or merch...">
-  </div>  <div class="section" id="reviews">
-    <h2>Anime Reviews - For You</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://i.imgur.com/W4T8hU3.jpg" alt="MF Ghost">
-        <h3>MF Ghost</h3>
-        <p>7.3</p>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/Z4pWj0D.jpg" alt="Dandadan">
-        <h3>Dandadan</h3>
-        <p>8.3</p>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/gH9fjNY.jpg" alt="One Punch Man">
-        <h3>One Punch Man</h3>
-        <p>8.7</p>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/4hAkzIL.jpg" alt="Blue Lock">
-        <h3>Blue Lock</h3>
-        <p>8.1</p>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/EkMccDb.jpg" alt="My Dress-Up Darling">
-        <h3>My Dress-Up Darling</h3>
-        <p>7.9</p>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/n7k68CS.jpg" alt="Fire Force">
-        <h3>Fire Force</h3>
-        <p>6.6</p>
-      </div>
-    </div>
-  </div>  <div class="section" id="fights">
-    <h2>Anime Fights</h2>
-    <div class="grid">
-      <!-- Placeholder anime fights -->
-      <div class="card">
-        <img src="https://i.imgur.com/ktIKPrJ.jpg" alt="Goku vs Jiren">
-        <h3>Goku vs Jiren</h3>
-        <p>Legendary Battle</p>
-      </div>
-    </div>
-  </div>  <div class="section" id="manga">
-    <h2>Manga</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://i.imgur.com/DyTQGyO.jpg" alt="One Piece Manga">
-        <h3>One Piece 1101</h3>
-        <p>Luffy rises again</p>
-      </div>
-    </div>
-  </div>  <div class="section" id="store">
-    <h2>Anime Store</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://i.imgur.com/v9YhZTe.jpg" alt="Naruto Hoodie">
-        <h3>Naruto Hoodie</h3>
-        <p>R500</p>
-      </div>
-    </div>
-  </div>
+  </nav>
+  <div class="search"><input type="text" id="search" placeholder="Search anime, manga, reviews, merch..."></div>
+
+  <div id="reviews" class="section"><h2>Anime Reviews</h2><div class="grid" id="reviews-grid"></div><button id="reviews-more">View More</button></div>
+  <div id="fights" class="section"><h2>Anime Fights</h2><div class="grid" id="fights-grid"></div><button id="fights-more">View More</button></div>
+  <div id="manga" class="section"><h2>Manga</h2><div class="grid" id="manga-grid"></div><button id="manga-more">View More</button></div>
+  <div id="store" class="section"><h2>Anime Store</h2><div class="grid" id="store-grid"></div><button id="store-more">View More</button></div>
+
+  <script>
+    // Utility to generate placeholder data
+    function generateData(prefix, count, summaryFn, imageUrlFn) {
+      return Array.from({length:count}, (_,i)=>({
+        title:`${prefix} ${i+1}`,
+        summary:summaryFn(i+1),
+        image:imageUrlFn(i+1)
+      }));
+    }
+
+    const reviews = generateData('Review Anime', 1000, i=>`News & update on anime #${i}`, i=>`https://placehold.co/200x300?text=Review+${i}`);
+    const fights = generateData('Fight Anime', 1000, i=>`Epic battle #${i}`, i=>`https://placehold.co/200x300?text=Fight+${i}`);
+    const manga = generateData('Manga Title', 1000, i=>`Popular manga summary #${i}`, i=>`https://placehold.co/200x300?text=Manga+${i}`);
+    const store = generateData('Merch Item', 1000, i=>`Price: $${(10 + (i%311)).toFixed(2)}`, i=>`https://placehold.co/200x300?text=Item+${i}`);
+
+    function renderSection(data, containerId, moreBtnId) {
+      let index = 0, batch = 50;
+      const container = document.getElementById(containerId);
+      const btn = document.getElementById(moreBtnId);
+      function renderBatch() {
+        const slice = data.slice(index, index+batch);
+        slice.forEach(d=> {
+          const div = document.createElement('div');
+          div.className='card';
+          div.innerHTML=`<img src="${d.image}" alt="${d.title}"><h3>${d.title}</h3><p>${d.summary}</p>`;
+          container.appendChild(div);
+        });
+        index += batch;
+        if(index>=data.length) btn.style.display='none';
+      }
+      btn.onclick = renderBatch;
+      renderBatch();
+    }
+
+    renderSection(reviews, 'reviews-grid', 'reviews-more');
+    renderSection(fights, 'fights-grid', 'fights-more');
+    renderSection(manga, 'manga-grid', 'manga-more');
+    renderSection(store, 'store-grid', 'store-more');
+  </script>
 </body>
-        </html>
+  </html>
   
       
