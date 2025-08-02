@@ -1,199 +1,84 @@
-import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AceNime - Home</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>AceNime</h1>
+    <input type="text" placeholder="Search anime, manga, clothes..." id="searchBar" />
+  </header>
 
-const animeReviews = [
-  {
-    title: "My Hero Academia",
-    image: "https://upload.wikimedia.org/wikipedia/en/3/30/My_Hero_Academia_Season_1.jpg",
-    rating: 5,
-  },
-  {
-    title: "Demon Slayer",
-    image: "https://upload.wikimedia.org/wikipedia/en/5/5e/Kimetsu_no_Yaiba_season_1.jpg",
-    rating: 4.5,
-  },
-  {
-    title: "Attack on Titan",
-    image: "https://upload.wikimedia.org/wikipedia/en/7/7e/Shingeki_no_Kyojin_manga_volume_1.jpg",
-    rating: 4.5,
-  },
-  {
-    title: "One Piece",
-    image: "https://upload.wikimedia.org/wikipedia/en/7/76/One_Piece_Season_1_DVD.jpg",
-    rating: 4,
-  },
-];
-
-const mangaList = [
-  {
-    title: "One Piece",
-    image: "https://upload.wikimedia.org/wikipedia/en/7/76/One_Piece_Season_1_DVD.jpg",
-  },
-  {
-    title: "Jujutsu Kaisen",
-    image: "https://upload.wikimedia.org/wikipedia/en/e/e7/Jujutsu_kaisen.jpg",
-  },
-  {
-    title: "Berserk",
-    image: "https://upload.wikimedia.org/wikipedia/en/8/89/Berserk_vol01.jpg",
-  },
-  {
-    title: "Naruto",
-    image: "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
-  },
-  {
-    title: "Dragon Ball",
-    image: "https://upload.wikimedia.org/wikipedia/en/3/3f/Dragon_Ball_volume_1_cover.jpg",
-  },
-  {
-    title: "Death Note",
-    image: "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
-  },
-  {
-    title: "Oshi no Ko",
-    image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Oshi_no_Ko_volume_1_cover.jpg",
-  },
-];
-
-const shopItems = [
-  { image: "https://example.com/hoodie-orange.jpg", name: "Orange Hoodie" },
-  { image: "https://example.com/tshirt-black.jpg", name: "Black T-Shirt" },
-  { image: "https://example.com/scroll.jpg", name: "Anime Scroll" },
-  { image: "https://example.com/tshirt-tie-dye.jpg", name: "Tie-Dye Tee" },
-];
-
-export default function AnimeReviewPage() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState("");
-
-  const handleCommentSubmit = () => {
-    if (newComment.trim()) {
-      setComments([...comments, newComment]);
-      setNewComment("");
-    }
-  };
-
-  const filteredReviews = animeReviews.filter((anime) =>
-    anime.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return (
-    <div className="p-6 bg-black text-white space-y-8">
-      {/* Hero Section */}
-      <div className="flex gap-6 items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_volume_1_cover.jpg" alt="Hero Character" className="w-64 rounded-2xl" />
-        <div>
-          <h1 className="text-4xl font-bold">ANIME REVIEWS</h1>
-          <p className="mt-2 text-lg">Read the latest reviews of your favorite anime series.</p>
-          <Button className="mt-4 bg-orange-500 text-white hover:bg-orange-600">Read Now</Button>
-        </div>
+  <section id="manga-section" class="scroll-section">
+    <h2>Manga <a href="/manga.html">View More</a></h2>
+    <div class="scroll-container">
+      <div class="card">
+        <img src="/images/manga1.jpg" alt="Manga 1">
+        <p>Attack on Titan</p>
       </div>
+      <!-- More manga cards here -->
+    </div>
+    <div class="comment-section">
+      <h3>Comments</h3>
+      <textarea placeholder="Leave your comment..."></textarea>
+      <button>Submit</button>
+    </div>
+  </section>
 
-      {/* Search Bar */}
-      <Input
-        placeholder="Search Anime Reviews..."
-        className="mt-4 bg-gray-800 border-none text-white placeholder-gray-400"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-
-      {/* Latest Reviews */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Latest Reviews</h2>
-        <Tabs defaultValue="all">
-          <TabsList>
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="action">Action</TabsTrigger>
-            <TabsTrigger value="adventure">Adventure</TabsTrigger>
-            <TabsTrigger value="fantasy">Fantasy</TabsTrigger>
-          </TabsList>
-        </Tabs>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-          {filteredReviews.map((anime, idx) => (
-            <Card key={idx} className="bg-gray-900 text-white">
-              <img src={anime.image} alt={anime.title} className="rounded-t-2xl" />
-              <CardContent className="p-4">
-                <h3 className="text-lg font-semibold">{anime.title}</h3>
-                <p className="text-yellow-400">{"★".repeat(Math.floor(anime.rating))}</p>
-                <a href="#" className="text-blue-400 hover:underline">Review</a>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+  <section id="reviews-section" class="scroll-section">
+    <h2>Anime Reviews <a href="/reviews.html">View More</a></h2>
+    <div class="scroll-container">
+      <div class="card">
+        <img src="/images/review1.jpg" alt="Anime Review">
+        <p>Jujutsu Kaisen Season 2 Review</p>
       </div>
+      <!-- More review cards here -->
+    </div>
+    <div class="comment-section">
+      <h3>Comments</h3>
+      <textarea placeholder="Leave your comment..."></textarea>
+      <button>Submit</button>
+    </div>
+  </section>
 
-      {/* Popular Manga */}
-      <div>
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Popular Manga</h2>
-          <a href="#" className="text-blue-400 hover:underline">View All</a>
-        </div>
-        <div className="flex gap-4 overflow-x-auto mt-4">
-          {mangaList.map((manga, idx) => (
-            <div
-              key={idx}
-              className="min-w-[120px] flex-shrink-0 bg-gray-800 p-4 rounded-xl text-center"
-            >
-              <img
-                src={manga.image}
-                alt={manga.title}
-                className="h-32 w-full object-cover rounded-xl mb-2"
-              />
-              <p>{manga.title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Shop Anime Clothing */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Shop Anime Clothing</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {shopItems.map((item, idx) => (
-            <Card key={idx} className="bg-gray-900 text-white">
-              <img src={item.image} alt={item.name} className="rounded-t-2xl" />
-              <CardContent className="p-4">
-                <p className="font-semibold">{item.name}</p>
-                <Button className="mt-2 w-full bg-orange-500 hover:bg-orange-600 text-white">
-                  Buy Now
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      {/* Comment Section */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Comments</h2>
-        <div className="space-y-2">
-          {comments.map((comment, idx) => (
-            <div key={idx} className="bg-gray-800 p-3 rounded-xl">
-              {comment}
-            </div>
-          ))}
-        </div>
-        <div className="mt-4">
-          <Textarea
-            placeholder="Write a comment..."
-            className="bg-gray-800 border-none text-white"
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-          />
-          <Button
-            onClick={handleCommentSubmit}
-            className="mt-2 bg-blue-500 hover:bg-blue-600 text-white"
-          >
-            Post Comment
-          </Button>
-        </div>
+  <section id="fights-section" class="scroll-section">
+    <h2>Anime Fights <a href="/fights.html">View More</a></h2>
+    <div class="scroll-container">
+      <div class="card">
+        <img src="/images/fight1.jpg" alt="Fight">
+        <p>Goku vs Jiren</p>
       </div>
     </div>
-  );
-}
+  </section>
+
+  <section id="facts-section" class="scroll-section">
+    <h2>Anime Facts <a href="/facts.html">View More</a></h2>
+    <div class="scroll-container">
+      <div class="card">
+        <img src="/images/fact1.jpg" alt="Fact">
+        <p>Naruto's last name wasn't always Uzumaki</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="store-section" class="scroll-section">
+    <h2>Anime Store <a href="/store.html">View More</a></h2>
+    <div class="scroll-container">
+      <div class="card">
+        <img src="/images/store1.jpg" alt="Product">
+        <p>Naruto Hoodie - R400</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AceNime. All rights reserved.</p>
+  </footer>
+</body>
+      </html>
+  
       
