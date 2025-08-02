@@ -1,98 +1,199 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Review & Store</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0e0e0e;
-      color: white;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    h2 {
-      margin-top: 40px;
-      font-size: 1.8em;
-    }
-    .scroll-section {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 10px 0;
-    }
-    .card {
-      background: #1a1a1a;
-      padding: 10px;
-      border-radius: 10px;
-      min-width: 180px;
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .card h4 {
-      margin-top: 10px;
-    }
-    .price {
-      color: #f25c3c;
-      margin-top: 5px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Anime Reviews and Store</h1><!-- Manga Covers -->
-<h2>Popular Manga Covers</h2>
-<div class="scroll-section">
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/6/6f/One_Piece_volume_1_cover.jpg" alt="One Piece"><h4>One Piece</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/NarutoCoverTankobon1.jpg/220px-NarutoCoverTankobon1.jpg" alt="Naruto"><h4>Naruto</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/f/fb/Bleach_%28manga%29_vol01_Cover.jpg" alt="Bleach"><h4>Bleach</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/22/Death_Note_vol_1.jpg" alt="Death Note"><h4>Death Note</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/e/e8/Dragon_Ball_volume_1_cover.jpg" alt="Dragon Ball"><h4>Dragon Ball</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/e/e3/FMA_volume_1_cover.jpg" alt="Fullmetal Alchemist"><h4>Fullmetal Alchemist</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/2c/Tokyo_Ghoul_volume_1.jpg" alt="Tokyo Ghoul"><h4>Tokyo Ghoul</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Jujutsu_kaisen_vol_1.jpg" alt="Jujutsu Kaisen"><h4>Jujutsu Kaisen</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/24/Hunter_x_Hunter_vol_1.png" alt="Hunter x Hunter"><h4>Hunter x Hunter</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Chainsaw_Man_volume_1.png" alt="Chainsaw Man"><h4>Chainsaw Man</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/f/fb/BlackCloverCover1.png" alt="Black Clover"><h4>Black Clover</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/8/8b/Demon_Slayer_Kimetsu_no_Yaiba_volume_1_cover.jpg" alt="Demon Slayer"><h4>Demon Slayer</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Solo_Leveling_1_English_cover.jpg" alt="Solo Leveling"><h4>Solo Leveling</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/23/Sword_Art_Online_light_novel_volume_1_cover.jpg" alt="Sword Art Online"><h4>Sword Art Online</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/d/db/Spy_x_Family_Volume_1.jpg" alt="Spy x Family"><h4>Spy x Family</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Blue_Lock_vol_1.png" alt="Blue Lock"><h4>Blue Lock</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Vinland_Saga_volume_1.jpg" alt="Vinland Saga"><h4>Vinland Saga</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/4/42/Haikyuu%21_volume_1_cover.jpg" alt="Haikyuu!!"><h4>Haikyuu!!</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/0/02/The_Promised_Neverland_volume_1.jpg" alt="The Promised Neverland"><h4>The Promised Neverland</h4></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Akira_volume_1_cover.jpg" alt="Akira"><h4>Akira</h4></div>
-</div>
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
-<!-- Anime Reviews -->
-<h2>Anime Reviews</h2>
-<div class="scroll-section">
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/26/My_Hero_Academia_Volume_1.png/220px-My_Hero_Academia_Volume_1.png" alt="My Hero Academia"><h4>My Hero Academia</h4><p>Incredible characters and intense fights!</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Attack_on_Titan_vol_1_cover.jpg" alt="Attack on Titan"><h4>Attack on Titan</h4><p>A dark, thrilling story of survival.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/8/8b/Demon_Slayer_Kimetsu_no_Yaiba_volume_1_cover.jpg" alt="Demon Slayer"><h4>Demon Slayer</h4><p>Gorgeous animation and deep emotion.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Jujutsu_kaisen_vol_1.jpg" alt="Jujutsu Kaisen"><h4>Jujutsu Kaisen</h4><p>Sorcerers vs. curses in stylish combat.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Solo_Leveling_1_English_cover.jpg" alt="Solo Leveling"><h4>Solo Leveling</h4><p>Epic action and a rising underdog.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/2/24/Hunter_x_Hunter_vol_1.png" alt="Hunter x Hunter"><h4>Hunter x Hunter</h4><p>Complex battles and strong worldbuilding.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/f/fb/Bleach_%28manga%29_vol01_Cover.jpg" alt="Bleach"><h4>Bleach</h4><p>Stylish action with cool characters.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/4/42/Haikyuu%21_volume_1_cover.jpg" alt="Haikyuu!!"><h4>Haikyuu!!</h4><p>Energetic sports story full of heart.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/0/02/The_Promised_Neverland_volume_1.jpg" alt="The Promised Neverland"><h4>The Promised Neverland</h4><p>Gripping mystery and smart kids.</p></div>
-  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Chainsaw_Man_volume_1.png" alt="Chainsaw Man"><h4>Chainsaw Man</h4><p>Crazy fights and unpredictable story.</p></div>
-</div>
+const animeReviews = [
+  {
+    title: "My Hero Academia",
+    image: "https://upload.wikimedia.org/wikipedia/en/3/30/My_Hero_Academia_Season_1.jpg",
+    rating: 5,
+  },
+  {
+    title: "Demon Slayer",
+    image: "https://upload.wikimedia.org/wikipedia/en/5/5e/Kimetsu_no_Yaiba_season_1.jpg",
+    rating: 4.5,
+  },
+  {
+    title: "Attack on Titan",
+    image: "https://upload.wikimedia.org/wikipedia/en/7/7e/Shingeki_no_Kyojin_manga_volume_1.jpg",
+    rating: 4.5,
+  },
+  {
+    title: "One Piece",
+    image: "https://upload.wikimedia.org/wikipedia/en/7/76/One_Piece_Season_1_DVD.jpg",
+    rating: 4,
+  },
+];
 
-<!-- Anime Store -->
-<h2>Anime Store Products</h2>
-<div class="scroll-section">
-  <!-- Product Cards from previous section stay unchanged (tees, pants, chains) -->
-</div>
+const mangaList = [
+  {
+    title: "One Piece",
+    image: "https://upload.wikimedia.org/wikipedia/en/7/76/One_Piece_Season_1_DVD.jpg",
+  },
+  {
+    title: "Jujutsu Kaisen",
+    image: "https://upload.wikimedia.org/wikipedia/en/e/e7/Jujutsu_kaisen.jpg",
+  },
+  {
+    title: "Berserk",
+    image: "https://upload.wikimedia.org/wikipedia/en/8/89/Berserk_vol01.jpg",
+  },
+  {
+    title: "Naruto",
+    image: "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
+  },
+  {
+    title: "Dragon Ball",
+    image: "https://upload.wikimedia.org/wikipedia/en/3/3f/Dragon_Ball_volume_1_cover.jpg",
+  },
+  {
+    title: "Death Note",
+    image: "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
+  },
+  {
+    title: "Oshi no Ko",
+    image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Oshi_no_Ko_volume_1_cover.jpg",
+  },
+];
 
-  </div>
-</body>
-                      </html>
+const shopItems = [
+  { image: "https://example.com/hoodie-orange.jpg", name: "Orange Hoodie" },
+  { image: "https://example.com/tshirt-black.jpg", name: "Black T-Shirt" },
+  { image: "https://example.com/scroll.jpg", name: "Anime Scroll" },
+  { image: "https://example.com/tshirt-tie-dye.jpg", name: "Tie-Dye Tee" },
+];
+
+export default function AnimeReviewPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
+  const handleCommentSubmit = () => {
+    if (newComment.trim()) {
+      setComments([...comments, newComment]);
+      setNewComment("");
+    }
+  };
+
+  const filteredReviews = animeReviews.filter((anime) =>
+    anime.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div className="p-6 bg-black text-white space-y-8">
+      {/* Hero Section */}
+      <div className="flex gap-6 items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_volume_1_cover.jpg" alt="Hero Character" className="w-64 rounded-2xl" />
+        <div>
+          <h1 className="text-4xl font-bold">ANIME REVIEWS</h1>
+          <p className="mt-2 text-lg">Read the latest reviews of your favorite anime series.</p>
+          <Button className="mt-4 bg-orange-500 text-white hover:bg-orange-600">Read Now</Button>
+        </div>
+      </div>
+
+      {/* Search Bar */}
+      <Input
+        placeholder="Search Anime Reviews..."
+        className="mt-4 bg-gray-800 border-none text-white placeholder-gray-400"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+
+      {/* Latest Reviews */}
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Latest Reviews</h2>
+        <Tabs defaultValue="all">
+          <TabsList>
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="action">Action</TabsTrigger>
+            <TabsTrigger value="adventure">Adventure</TabsTrigger>
+            <TabsTrigger value="fantasy">Fantasy</TabsTrigger>
+          </TabsList>
+        </Tabs>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+          {filteredReviews.map((anime, idx) => (
+            <Card key={idx} className="bg-gray-900 text-white">
+              <img src={anime.image} alt={anime.title} className="rounded-t-2xl" />
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold">{anime.title}</h3>
+                <p className="text-yellow-400">{"★".repeat(Math.floor(anime.rating))}</p>
+                <a href="#" className="text-blue-400 hover:underline">Review</a>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Popular Manga */}
+      <div>
+        <div className="flex justify-between items-center">
+          <h2 className="text-2xl font-bold">Popular Manga</h2>
+          <a href="#" className="text-blue-400 hover:underline">View All</a>
+        </div>
+        <div className="flex gap-4 overflow-x-auto mt-4">
+          {mangaList.map((manga, idx) => (
+            <div
+              key={idx}
+              className="min-w-[120px] flex-shrink-0 bg-gray-800 p-4 rounded-xl text-center"
+            >
+              <img
+                src={manga.image}
+                alt={manga.title}
+                className="h-32 w-full object-cover rounded-xl mb-2"
+              />
+              <p>{manga.title}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Shop Anime Clothing */}
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Shop Anime Clothing</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {shopItems.map((item, idx) => (
+            <Card key={idx} className="bg-gray-900 text-white">
+              <img src={item.image} alt={item.name} className="rounded-t-2xl" />
+              <CardContent className="p-4">
+                <p className="font-semibold">{item.name}</p>
+                <Button className="mt-2 w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  Buy Now
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Comment Section */}
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Comments</h2>
+        <div className="space-y-2">
+          {comments.map((comment, idx) => (
+            <div key={idx} className="bg-gray-800 p-3 rounded-xl">
+              {comment}
+            </div>
+          ))}
+        </div>
+        <div className="mt-4">
+          <Textarea
+            placeholder="Write a comment..."
+            className="bg-gray-800 border-none text-white"
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+          />
+          <Button
+            onClick={handleCommentSubmit}
+            className="mt-2 bg-blue-500 hover:bg-blue-600 text-white"
+          >
+            Post Comment
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+      
