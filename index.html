@@ -1,84 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AceNime - Home</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <script src="/js/app.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AceNime - Anime World</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #fff;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+    .search-bar {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 60%;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    section {
+      margin: 40px 0;
+    }
+    section h2 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .cards {
+      display: flex;
+      overflow-x: scroll;
+      gap: 20px;
+    }
+    .card {
+      min-width: 300px;
+      background-color: #222;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 10px 0;
+      color: #ffc107;
+    }
+    .view-more {
+      display: block;
+      margin-top: 10px;
+      color: #00f7ff;
+      text-decoration: underline;
+    }
+    .comments {
+      margin-top: 20px;
+    }
+    .comments textarea {
+      width: 100%;
+      height: 80px;
+      border-radius: 8px;
+      padding: 10px;
+      resize: none;
+    }
+    .comments button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #00f7ff;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>AceNime</h1>
-    <input type="text" placeholder="Search anime, manga, clothes..." id="searchBar" />
-  </header>
-
-  <section id="manga-section" class="scroll-section">
-    <h2>Manga <a href="/manga.html">View More</a></h2>
-    <div class="scroll-container">
+    <p>Your Ultimate Anime World 🌸</p>
+  </header>  <div class="search-bar">
+    <input type="text" placeholder="Search for manga, anime, fights, facts, clothes...">
+  </div>  <section id="manga">
+    <h2>Manga Section</h2>
+    <div class="cards">
       <div class="card">
-        <img src="/images/manga1.jpg" alt="Manga 1">
-        <p>Attack on Titan</p>
+        <img src="https://example.com/manga1.jpg" alt="Manga Preview">
+        <h3>One Piece Chapter 1101</h3>
+        <p>Luffy meets a new emperor...</p>
+        <a href="#" class="view-more">View More</a>
+        <div class="comments">
+          <textarea placeholder="Add a comment..."></textarea>
+          <button>Post Comment</button>
+        </div>
       </div>
-      <!-- More manga cards here -->
+      <!-- Add more manga cards here -->
     </div>
-    <div class="comment-section">
-      <h3>Comments</h3>
-      <textarea placeholder="Leave your comment..."></textarea>
-      <button>Submit</button>
-    </div>
-  </section>
-
-  <section id="reviews-section" class="scroll-section">
-    <h2>Anime Reviews <a href="/reviews.html">View More</a></h2>
-    <div class="scroll-container">
+  </section>  <section id="anime-reviews">
+    <h2>Anime Reviews & News</h2>
+    <div class="cards">
       <div class="card">
-        <img src="/images/review1.jpg" alt="Anime Review">
-        <p>Jujutsu Kaisen Season 2 Review</p>
+        <img src="https://example.com/jujutsu.jpg" alt="Anime Review">
+        <h3>Jujutsu Kaisen S2</h3>
+        <p>Shibuya Arc Breakdown</p>
+        <a href="#" class="view-more">View More</a>
+        <div class="comments">
+          <textarea placeholder="Add a comment..."></textarea>
+          <button>Post Comment</button>
+        </div>
       </div>
-      <!-- More review cards here -->
+      <!-- More anime reviews here -->
     </div>
-    <div class="comment-section">
-      <h3>Comments</h3>
-      <textarea placeholder="Leave your comment..."></textarea>
-      <button>Submit</button>
-    </div>
-  </section>
-
-  <section id="fights-section" class="scroll-section">
-    <h2>Anime Fights <a href="/fights.html">View More</a></h2>
-    <div class="scroll-container">
+  </section>  <section id="anime-fights">
+    <h2>Anime Fights</h2>
+    <div class="cards">
       <div class="card">
-        <img src="/images/fight1.jpg" alt="Fight">
-        <p>Goku vs Jiren</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="facts-section" class="scroll-section">
-    <h2>Anime Facts <a href="/facts.html">View More</a></h2>
-    <div class="scroll-container">
-      <div class="card">
-        <img src="/images/fact1.jpg" alt="Fact">
-        <p>Naruto's last name wasn't always Uzumaki</p>
+        <img src="https://example.com/fight1.jpg" alt="Fight Preview">
+        <h3>Goku vs Jiren</h3>
+        <p>Ultra Instinct rises again!</p>
+        <a href="#" class="view-more">View More</a>
       </div>
     </div>
-  </section>
-
-  <section id="store-section" class="scroll-section">
-    <h2>Anime Store <a href="/store.html">View More</a></h2>
-    <div class="scroll-container">
+  </section>  <section id="anime-facts">
+    <h2>Anime Facts</h2>
+    <div class="cards">
       <div class="card">
-        <img src="/images/store1.jpg" alt="Product">
-        <p>Naruto Hoodie - R400</p>
+        <img src="https://example.com/fact1.jpg" alt="Anime Fact">
+        <h3>Naruto's Voice Actor</h3>
+        <p>Did you know Naruto is voiced by a woman?</p>
+        <a href="#" class="view-more">View More</a>
+      </div>
+    </div>
+  </section>  <section id="anime-store">
+    <h2>Anime Store</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://example.com/shirt.jpg" alt="Anime Shirt">
+        <h3>Naruto Hoodie</h3>
+        <p>R500 - Limited Edition</p>
+        <a href="#" class="view-more">Buy Now</a>
       </div>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 AceNime. All rights reserved.</p>
-  </footer>
 </body>
-      </html>
+          </html>
   
       
