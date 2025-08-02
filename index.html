@@ -2,162 +2,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AceNime - Anime World</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>AceNime</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
     body {
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
       color: #fff;
-      padding: 20px;
     }
     header {
+      padding: 20px;
       text-align: center;
-      padding: 20px 0;
+      background: linear-gradient(90deg, #ff4b2b, #ff416c);
     }
     header h1 {
-      font-size: 3rem;
-      color: #fff;
+      margin: 0;
+      font-size: 2.5rem;
     }
-    .search-bar {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .search-bar input {
-      padding: 10px;
-      width: 60%;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-    section {
-      margin: 40px 0;
-    }
-    section h2 {
-      margin-bottom: 10px;
-      font-size: 2rem;
-      color: #fff;
-    }
-    .cards {
+    .nav {
       display: flex;
-      overflow-x: scroll;
-      gap: 20px;
+      justify-content: space-around;
+      background-color: #2a2a2a;
+      padding: 10px 0;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav a.active {
+      border-bottom: 2px solid #00e5ff;
+    }
+    .search {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background-color: #333;
+    }
+    .search input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+    .section {
+      padding: 20px;
+    }
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: #00e5ff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 15px;
     }
     .card {
-      min-width: 300px;
-      background-color: #222;
-      border-radius: 15px;
-      padding: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      background-color: #2d2d2d;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
     }
     .card img {
       width: 100%;
-      border-radius: 10px;
+      display: block;
     }
     .card h3 {
-      margin: 10px 0;
-      color: #ffc107;
+      margin: 10px 5px;
+      font-size: 0.95rem;
+      color: #fff;
     }
-    .view-more {
-      display: block;
-      margin-top: 10px;
-      color: #00f7ff;
-      text-decoration: underline;
-    }
-    .comments {
-      margin-top: 20px;
-    }
-    .comments textarea {
-      width: 100%;
-      height: 80px;
-      border-radius: 8px;
-      padding: 10px;
-      resize: none;
-    }
-    .comments button {
-      margin-top: 10px;
-      padding: 8px 15px;
-      background-color: #00f7ff;
-      border: none;
-      border-radius: 5px;
-      color: #000;
-      cursor: pointer;
+    .card p {
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>AceNime</h1>
-    <p>Your Ultimate Anime World 🌸</p>
-  </header>  <div class="search-bar">
-    <input type="text" placeholder="Search for manga, anime, fights, facts, clothes...">
-  </div>  <section id="manga">
-    <h2>Manga Section</h2>
-    <div class="cards">
+  </header>
+  <div class="nav">
+    <a href="#store">Anime Store</a>
+    <a href="#fights">Anime Fights</a>
+    <a href="#reviews" class="active">Anime Reviews</a>
+    <a href="#manga">Manga</a>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="Search anime, manga, fights, or merch...">
+  </div>  <div class="section" id="reviews">
+    <h2>Anime Reviews - For You</h2>
+    <div class="grid">
       <div class="card">
-        <img src="https://example.com/manga1.jpg" alt="Manga Preview">
-        <h3>One Piece Chapter 1101</h3>
-        <p>Luffy meets a new emperor...</p>
-        <a href="#" class="view-more">View More</a>
-        <div class="comments">
-          <textarea placeholder="Add a comment..."></textarea>
-          <button>Post Comment</button>
-        </div>
+        <img src="https://i.imgur.com/W4T8hU3.jpg" alt="MF Ghost">
+        <h3>MF Ghost</h3>
+        <p>7.3</p>
       </div>
-      <!-- Add more manga cards here -->
-    </div>
-  </section>  <section id="anime-reviews">
-    <h2>Anime Reviews & News</h2>
-    <div class="cards">
       <div class="card">
-        <img src="https://example.com/jujutsu.jpg" alt="Anime Review">
-        <h3>Jujutsu Kaisen S2</h3>
-        <p>Shibuya Arc Breakdown</p>
-        <a href="#" class="view-more">View More</a>
-        <div class="comments">
-          <textarea placeholder="Add a comment..."></textarea>
-          <button>Post Comment</button>
-        </div>
+        <img src="https://i.imgur.com/Z4pWj0D.jpg" alt="Dandadan">
+        <h3>Dandadan</h3>
+        <p>8.3</p>
       </div>
-      <!-- More anime reviews here -->
+      <div class="card">
+        <img src="https://i.imgur.com/gH9fjNY.jpg" alt="One Punch Man">
+        <h3>One Punch Man</h3>
+        <p>8.7</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/4hAkzIL.jpg" alt="Blue Lock">
+        <h3>Blue Lock</h3>
+        <p>8.1</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/EkMccDb.jpg" alt="My Dress-Up Darling">
+        <h3>My Dress-Up Darling</h3>
+        <p>7.9</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/n7k68CS.jpg" alt="Fire Force">
+        <h3>Fire Force</h3>
+        <p>6.6</p>
+      </div>
     </div>
-  </section>  <section id="anime-fights">
+  </div>  <div class="section" id="fights">
     <h2>Anime Fights</h2>
-    <div class="cards">
+    <div class="grid">
+      <!-- Placeholder anime fights -->
       <div class="card">
-        <img src="https://example.com/fight1.jpg" alt="Fight Preview">
+        <img src="https://i.imgur.com/ktIKPrJ.jpg" alt="Goku vs Jiren">
         <h3>Goku vs Jiren</h3>
-        <p>Ultra Instinct rises again!</p>
-        <a href="#" class="view-more">View More</a>
+        <p>Legendary Battle</p>
       </div>
     </div>
-  </section>  <section id="anime-facts">
-    <h2>Anime Facts</h2>
-    <div class="cards">
+  </div>  <div class="section" id="manga">
+    <h2>Manga</h2>
+    <div class="grid">
       <div class="card">
-        <img src="https://example.com/fact1.jpg" alt="Anime Fact">
-        <h3>Naruto's Voice Actor</h3>
-        <p>Did you know Naruto is voiced by a woman?</p>
-        <a href="#" class="view-more">View More</a>
+        <img src="https://i.imgur.com/DyTQGyO.jpg" alt="One Piece Manga">
+        <h3>One Piece 1101</h3>
+        <p>Luffy rises again</p>
       </div>
     </div>
-  </section>  <section id="anime-store">
+  </div>  <div class="section" id="store">
     <h2>Anime Store</h2>
-    <div class="cards">
+    <div class="grid">
       <div class="card">
-        <img src="https://example.com/shirt.jpg" alt="Anime Shirt">
+        <img src="https://i.imgur.com/v9YhZTe.jpg" alt="Naruto Hoodie">
         <h3>Naruto Hoodie</h3>
-        <p>R500 - Limited Edition</p>
-        <a href="#" class="view-more">Buy Now</a>
+        <p>R500</p>
       </div>
     </div>
-  </section>
+  </div>
 </body>
-          </html>
+        </html>
   
       
